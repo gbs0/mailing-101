@@ -5,10 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
 
-  def welcome(user, role)
+  def welcome(user, role, ticket)
     @greeting = %w[Viva].sample
     # Holds the ticket type
-    @ticket_type = @ticket_type.include?(%w[RSVP Talk Inscrição])
+    # %w[RSVP Talk Inscrição Workshop]
+    @ticket_type = event_type(ticket)
     @user = user
     @persona = persona(role)
 
@@ -28,6 +29,11 @@ class UserMailer < ApplicationMailer
  		@change_carrer = "e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,"
  	end
 
+ 	def event_type(ticket_type)
+ 		return %w[RSVP Talk Inscrição Workshop].include?(ticket_type)
+
+ 		end 
+ 	end
  	def about_us
  	end
 end
