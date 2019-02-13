@@ -9,6 +9,18 @@ class UserMailer < ApplicationMailer
     @greeting = ["Olá", "Oi", "Viva!"].sample
     @user = user
 
+
     mail to: "to@example.org"
   end
+
+ 	def persona
+ 		@dev = %w[]
+ 		@startup = %w[]
+ 		@carrer = %w[]
+ 		@learning = 
+ 		@changing_carrer = %w[e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,]
+ 	end
+
+ 	def about_us
+ 	end
 end
