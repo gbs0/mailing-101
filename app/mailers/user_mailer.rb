@@ -18,15 +18,20 @@ class UserMailer < ApplicationMailer
  		else
  			""
  		end
-
  	end
 
-  def welcome(user, role, ticket, cell_phone)
-    @greeting = %w[Viva].sample
+ 	def greeting(array)
+ 		return array.sample
+ 	end
+ 	
+  def welcome(first_name, last_name, role, ticket, cell_phone)
+    @first_name = first_name
+    @last_name = last_name
+    @greeting = greeting(%w[Viva])
     # Holds the ticket type
     # %w[RSVP Talk Inscrição Workshop]
     @ticket_type = event_type(ticket)
-    @user = user
+    
     @role = persona(role)
     @cell_phone = cell_phone
     # Make a method for parse emails
@@ -49,6 +54,7 @@ class UserMailer < ApplicationMailer
  		end
  	end
 
+ 	 
 
  	def more_about_us
 
