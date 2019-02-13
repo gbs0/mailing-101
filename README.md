@@ -26,3 +26,4 @@ Things you may want to cover:
 #### Generate email preview 
 
 `mkdir -p test/mailers/previews`
+
