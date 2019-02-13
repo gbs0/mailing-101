@@ -34,16 +34,26 @@ class UserMailer < ApplicationMailer
  		end
  	end
 
+ 	private
+
  	def event_type(ticket_type)
  		return true if %w[RSVP Talk Inscrição Workshop].include?(ticket_type)
  	end
 
  	def prospect(text)
+ 		meting_url = ""
  		@call = "Would You Like To Hear About Le Wagon's Other Free Workshops And Talks?"
-
+ 		@no = 	"No, thank you."
+ 		case text
+ 		when @call
+ 			return "E se preferir, poderá conversar com Ana sobre o bootcamp através do link"
+ 		when @no
+ 			return falses
+ 		end
  	end
 
 
- 	def about_us
+ 	def more_about_us
+
  	end
 end
