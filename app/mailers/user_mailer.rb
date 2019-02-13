@@ -5,20 +5,24 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
 
-  def welcome(user)
-    @greeting = ["Olá", "Oi", "Viva!"].sample
+  def welcome(user, role)
+    @greeting = ["Viva"].sample
     @user = user
-
+    @persona = persona(role)
 
     mail to: "to@example.org"
   end
 
- 	def persona
- 		@dev = %w[]
- 		@startup = %w[]
+ 	def persona(role)
+ 		case role
+		when @dev
+			return %w[e de como podemos lhe ajudar a se tornar um dev,]
+ 		when @startup = "e de como podemos lhe ajudar a alcançar o seu objetivo relacionado a startups,"
+ 		end
+
  		@carrer = %w[]
  		@learning = 
- 		@changing_carrer = %w[e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,]
+ 		@change_carrer = "e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,"
  	end
 
  	def about_us
