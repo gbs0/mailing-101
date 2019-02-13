@@ -4,9 +4,10 @@ class UserMailer < ApplicationMailer
   # with the following lookup:
   #
   #   en.user_mailer.welcome.subject
-  #
+
   def welcome
-    @greeting = "Hi"
+    @greeting = %w[Olá Oi].sample
+
 
     mail to: "to@example.org"
   end
