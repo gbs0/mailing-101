@@ -2,9 +2,6 @@
 class UserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/user_mailer/welcome
-  def here_for(text)
-  	startup 
-  end
   def welcome
   	first_name = "Fernando"
   	last_name = "Jardim"
