@@ -6,7 +6,9 @@ class UserMailerPreview < ActionMailer::Preview
   	first_name = "Fernando"
   	last_name = "Jardim"
   	role = "startup"
-    UserMailer.welcome(user, role)
+    UserMailer.welcome(first_name,
+    									 last_name,
+    									 role)
   end
 
 end

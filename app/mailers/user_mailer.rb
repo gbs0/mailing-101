@@ -6,12 +6,15 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
 
   def welcome(user, role)
-    @greeting = ["Viva"].sample
+    @greeting = %w[Viva].sample
+    # Holds the ticket type
+    @ticket_type = @ticket_type.include?(%w[RSVP Talk Inscrição])
     @user = user
     @persona = persona(role)
 
     mail to: "to@example.org"
   end
+
 
  	def persona(role)
  		case role
