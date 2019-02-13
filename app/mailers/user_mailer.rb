@@ -5,14 +5,16 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
 
-  def welcome(user, role, ticket)
+  def welcome(user, role, ticket, cell_phone)
     @greeting = %w[Viva].sample
     # Holds the ticket type
     # %w[RSVP Talk Inscrição Workshop]
     @ticket_type = event_type(ticket)
     @user = user
     @persona = persona(role)
-
+    @cell_phone = cell_phone
+    
+    # Make a method for parse emails
     mail to: "to@example.org"
   end
 
@@ -21,19 +23,27 @@ class UserMailer < ApplicationMailer
  		case role
 		when @dev
 			return %w[e de como podemos lhe ajudar a se tornar um dev,]
- 		when @startup = "e de como podemos lhe ajudar a alcançar o seu objetivo relacionado a startups,"
+ 		when @startup 
+ 			return %w[e de como podemos lhe ajudar a alcançar o seu objetivo relacionado a startups,]
+ 		when @new_carreer
+ 			return %w[]
+ 		when @learning
+ 			return %w[]
+ 		when @change_carreer
+ 			return %w[e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,]
  		end
-
- 		@carrer = %w[]
- 		@learning = 
- 		@change_carrer = "e de como podemos lhe ajudar a alcançar o seu objetivo de mudar de carreira,"
  	end
 
  	def event_type(ticket_type)
- 		return %w[RSVP Talk Inscrição Workshop].include?(ticket_type)
-
- 		end 
+ 		return true if %w[RSVP Talk Inscrição Workshop].include?(ticket_type)
  	end
+
+ 	def prospect(text)
+ 		@call = "Would You Like To Hear About Le Wagon's Other Free Workshops And Talks?"
+
+ 	end
+
+
  	def about_us
  	end
 end
