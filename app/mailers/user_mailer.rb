@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.welcome.subject
   def persona(role)
  		if role == "dev"
-			return %w[e de como podemos lhe ajudar a se tornar um dev,]
+			return "e de como podemos lhe ajudar a se tornar um dev,"
  		elsif role == "startup" 
  			return "e de como podemos lhe ajudar a alcançar o seu objetivo relacionado a startups"
  		elsif role == "new_carreer"
@@ -29,7 +29,6 @@ class UserMailer < ApplicationMailer
     @user = user
     @role = persona(role)
     @cell_phone = cell_phone
-    
     # Make a method for parse emails
     mail to: "to@example.org"
   end
