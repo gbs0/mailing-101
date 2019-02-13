@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+#### Generate email preview 
+
+`mkdir -p test/mailers/previews`
