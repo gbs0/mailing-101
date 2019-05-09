@@ -28,8 +28,10 @@ class UserMailer < ApplicationMailer
     @first_name = first_name
     @last_name = last_name
     @greeting = greeting(%w[Viva])
+    
     # Holds the ticket type
     # %w[RSVP Talk Inscrição Workshop]
+    
     @ticket_type = event_type(ticket)
     
     @role = persona(role)
@@ -47,11 +49,13 @@ class UserMailer < ApplicationMailer
  		@call = "Would You Like To Hear About Le Wagon's Other Free Workshops And Talks?"
  		@no = 	"No, thank you."
  		case text
- 		when @call
- 			"E se preferir, poderá conversar com Ana sobre o bootcamp através do link"
- 		when @no
- 			false
+ 		  when @call
+ 			  "E se preferir, poderá conversar com Ana sobre o bootcamp através do link"
+ 		  when @no
+ 		    false
  		end
+
+
  	end
 
  	 
