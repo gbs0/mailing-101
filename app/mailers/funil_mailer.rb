@@ -1,5 +1,5 @@
 # Declare a Hash with students info
-@PROSPECS = 
+@PROSPECS = {}
 
 
 @FIRST_NAME = []
